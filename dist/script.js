@@ -1,0 +1,2 @@
+const btnHamburger=document.querySelector("#btnHamburger"),header=document.querySelector(".header"),fadeElems=document.querySelector(".has-fade");btnHamburger.addEventListener("click",(function(){header.classList.contains("open")?(header.classList.remove("open"),fadeElems.forEach((function(e){e.classList.remove("fade-int"),e.classList.add("fade-out")}))):(header.classList.add("open"),fadeElems.forEach((function(e){e.classList.remove("fade-out"),e.classList.add("fade-int")})))}));
+//# sourceMappingURL=script.js.map

@@ -1,0 +1,86 @@
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    color: white;
+    padding-top: .8125rem;
+    background: transparent;
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+    &__main{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &.scrolling-active{
+        background-color: #161617;
+    }
+    &.open{
+        .header__mobile__nav{
+           transform: translate(-50%,20%);
+        }
+        .header__toggle{
+            >span:first-child{
+                transform: rotate(45deg);
+            }
+            >span:nth-child(2){
+                opacity: 0;
+            }
+            >span:last-child{
+                transform: rotate(-45deg);
+            }
+        }
+
+    }
+    &.fixedheader{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    &__desktop__links{
+       >a:not(:last-child){
+           margin-right: 1rem;
+       }
+    }
+    &__mobile__nav{
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%,-220%);
+        transition: transform 0.7s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+    &__mobile__links{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        text-align: center;
+        width: 90%;
+        background: $graylishdark1;
+        a{
+            display: block;
+            border-bottom: 0.0325rem solid $golden;
+            &:not(:last-child){
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    &__toggle{
+        >span{
+            display: block;
+            width: 1.775rem;
+            height: 0.25rem;
+            border-radius: 0.1875rem;
+            background-color: white;
+            transform-origin: 5px 2px;
+            transition: 300ms ease-in-out all;
+            &:not(:last-child){
+                margin-bottom: 0.1875rem;
+            }
+        }
+    }
+}
